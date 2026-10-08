@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorrido Virtual con Imágenes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <style>
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #1a1a1a; color: #fff; }
+        #header { padding: 15px; text-align: center; background: #111; }
+        #panorama { width: 100vw; height: 85vh; }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <h1>Mi Recorrido Virtual Interactivo</h1>
+        <p>Haz clic en los puntos interactivos para desplazarte</p>
+    </div>
+
+    <div id="panorama"></div>
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<script>
+pannellum.viewer('panorama', {
+    "default": {
+        "firstScene": "entrada",
+        "author": "Tu Nombre",
+        "sceneFadeDuration": 1000,
+        "autoLoad": true,
+        "hotSpotDebug": true
+    },
+    "scenes": {
+        "entrada": {
+            "title": "1. Entrada",
+            "hfov": 110,
+            "pitch": 0,
+            "yaw": 0,
+            "panorama": "img/nikkei(entrada).jpeg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 30,
+                    "type": "scene",
+                    "text": "Siguiente: Escaleras",
+                    "sceneId": "escaleras"
+                }
+            ]
+        },
+        "escaleras": {
+            "title": "2. Escaleras",
+            "hfov": 110,
+            "pitch": 0,
+            "yaw": 0,
+            "panorama": "img/nikkei(escaleras).jpeg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -30,
+                    "type": "scene",
+                    "text": "Anterior: Entrada",
+                    "sceneId": "entrada"
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 30,
+                    "type": "scene",
+                    "text": "Siguiente: Escaleras 2",
+                    "sceneId": "escaleras2"
+                }
+            ]
+        },
+        "escaleras2": {
+            "title": "3. Escaleras 2",
+            "hfov": 110,
+            "pitch": 0,
+            "yaw": 0,
+            "panorama": "img/nikkei(escaleras2).jpeg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -30,
+                    "type": "scene",
+                    "text": "Anterior: Escaleras",
+                    "sceneId": "escaleras"
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 30,
+                    "type": "scene",
+                    "text": "Siguiente: Recepción",
+                    "sceneId": "recepcion"
+                }
+            ]
+        },
+        "recepcion": {
+            "title": "4. Recepción",
+            "hfov": 110,
+            "pitch": 0,
+            "yaw": 0,
+            "panorama": "img/nikkei(recepcion).jpeg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -30,
+                    "type": "scene",
+                    "text": "Anterior: Escaleras 2",
+                    "sceneId": "escaleras2"
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 30,
+                    "type": "scene",
+                    "text": "Siguiente: Comedores 3",
+                    "sceneId": "comedores3"
+                }
+            ]
+        },
+        "comedores3": {
+            "title": "5. Comedores 3",
+            "hfov": 110,
+            "pitch": 0,
+            "yaw": 0,
+            "panorama": "img/nikkei(comedores3).jpeg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -30,
+                    "type": "scene",
+                    "text": "Anterior: Recepción",
+                    "sceneId": "recepcion"
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 30,
+                    "type": "scene",
+                    "text": "Siguiente: Terraza",
+                    "sceneId": "terrasa"
+                }
+            ]
+        },
+        "terrasa": {
+            "title": "6. Terraza",
+            "hfov": 110,
+            "pitch": 0,
+            "yaw": 0,
+            "panorama": "img/nikkei(terrasa).jpeg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -30,
+                    "type": "scene",
+                    "text": "Anterior: Comedores 3",
+                    "sceneId": "comedores3"
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 30,
+                    "type": "scene",
+                    "text": "Reiniciar Recorrido",
+                    "sceneId": "entrada"
+                }
+            ]
+        }
+    }
+});
+</script>
+</body>
+</html>
